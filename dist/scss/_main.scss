@@ -630,7 +630,7 @@
     padding: 121px 0 58px;
     border: 1px dashed #272424;
     border-width: 0px 0px 1px 0px;
-    @include background("../img/efficiency-bg.jpg",);
+    @include background("../img/efficiency-bg.jpg");
 
     &__wrapper{
         max-width: 793px;
@@ -649,7 +649,7 @@
 
         &-title{
             @extend %h5-style;
-            @include margin-bottom(23px,20px,null)
+            @include margin-bottom(23px,20px,null);
         }
 
         &-text{
