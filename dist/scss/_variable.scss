@@ -1,0 +1,116 @@
+$access-color: #cb0e17;
+$primary-color: #333333;
+$secondary-color: #010101;
+$invert-color: #FFF;
+$black-color: #000;
+$grey-color: #999999;
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Roboto Thin', arial;
+$tablet: 1024px;
+$mobile: 767px;
+
+@mixin for-tablet{
+    @media(max-width:$tablet){
+        @content;
+    }
+}
+
+@mixin for-mobile{
+    @media(max-width:$mobile){
+        @content;
+    }
+}
+
+@mixin media-query($tablet-size, $tablet-lh, $mobile-size){
+    @media(max-width:$tablet){
+        font-size: $tablet-size;
+        line-height: $tablet-lh;
+    }
+    @media(max-width:$mobile){
+        font-size: $mobile-size; 
+    }
+}
+
+@mixin flex($display, $justify-content, $align-items, $wrap){
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $wrap;
+}
+
+@mixin margin-bottom($mb,$mb-tablet,$mb-mobile){
+    margin-bottom: $mb;
+    @media(max-width:$tablet){
+        margin-bottom: $mb-tablet;
+    }
+    @media(max-width:$mobile){
+        margin-bottom: $mb-mobile;
+    }
+}
+
+@mixin background($imgpath, $position:center center, $repeat: no-repeat, $size:cover) {
+    background: {
+        image: url($imgpath);
+        position: $position;
+        repeat: $repeat;
+        size: $size;
+    }
+}
+
+@mixin gap-wrapper($gap,$gap-tablet){
+    margin: 0 $gap;
+    @media(max-width:$tablet){
+        margin: 0 $gap-tablet;
+    }
+}
+
+@mixin gap-column($gap,$gap-tablet){
+    padding: 0 $gap;
+    @media(max-width:$tablet){
+        padding: 0 $gap-tablet;
+    }
+}
+
+%h1-style{
+    font-size: 50px;
+    line-height: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    @include media-query(40px,null,28px)
+}
+
+%h3-style{
+    font-size: 32px;
+    line-height: 1.1em;
+    font-weight: 300;
+    @include media-query(28px,null,24px)
+}
+
+%h4-style{
+    font-size: 30px;
+    line-height: 1.1em;
+    font-weight: 300;
+    @include media-query(26px,null,22px)
+}
+
+%h5-style{
+    font-size: 25px;
+    line-height: 1.1em;
+    font-weight: 400;
+    @media(max-width:$mobile){
+        font-size: 20px;
+    }
+}
+
+%h6-style{
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+%input-text{
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 300;
+    color: $primary-color;
+}
